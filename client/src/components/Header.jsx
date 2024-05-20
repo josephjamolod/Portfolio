@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -32,6 +32,7 @@ const socialLinks = [
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
+  const location = useLocation();
 
   return (
     <motion.header
@@ -94,7 +95,9 @@ export default function Header() {
                   <div key={index} className="overflow-hidden">
                     <motion.div variants={menuVars(false, false, true)}>
                       <Link
-                        className="text-2xl hover:font-semibold "
+                        className={`text-2xl ${
+                          location.pathname === link.pathName && "font-semibold"
+                        } `}
                         onClick={() => setMenu(false)}
                         to={link.pathName}
                       >
@@ -120,7 +123,9 @@ export default function Header() {
             return (
               <Link
                 key={index}
-                className="focus:underline hover:underline "
+                className={`${
+                  location.pathname === link.pathName && "underline"
+                } hover:underline`}
                 to={link.pathName}
               >
                 {link.linkName}
