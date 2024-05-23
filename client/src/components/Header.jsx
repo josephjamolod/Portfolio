@@ -49,7 +49,7 @@ export default function Header() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className={`fixed md:hidden top-0 h-screen w-full  left-0 origin-top bg-white flex justify-center items-center flex-col`}
+            className={`fixed md:hidden top-0 h-screen w-full  left-0 origin-top bg-white flex justify-center items-center flex-col z-30`}
           >
             <motion.ul
               variants={menuVars(false, true)}
