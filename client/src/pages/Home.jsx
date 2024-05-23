@@ -11,7 +11,7 @@ export default function Home() {
       variants={fadeIn("down", 0.2)}
       initial="hidden"
       whileInView={"show"}
-      className="flex flex-col md:flex-row  justify-center lg:mt-20 lg:px-20 xl:px-40 2xl:px-60"
+      className="flex flex-col md:flex-row  justify-center 2xl:mt-20 lg:px-20 xl:px-40 2xl:px-60"
     >
       <div className="flex flex-col flex-1 px-5 items-center text-center md:items-start md:text-start md:pl-20 md:pr-0 xl:pl-40 2xl:pl-60 ">
         <p
