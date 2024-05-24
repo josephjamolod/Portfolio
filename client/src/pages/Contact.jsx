@@ -24,7 +24,7 @@ export default function Contact() {
     >
       <StarsCanvas />
       <div
-        className={`flex flex-col justify-between items-center absolute ${
+        className={`flex flex-col justify-between items-center absolute backdrop-blur-md ${
           big && "px-5 md:px-10"
         } ${
           big && "py-5 md:py-10"

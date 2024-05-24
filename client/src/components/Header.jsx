@@ -40,7 +40,8 @@ export default function Header() {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.7 }}
-      className="w-full py-10 px-8 md:px-16 flex justify-between items-center"
+      // className="w-full py-10 px-8 md:px-16 flex justify-between items-center"
+      className="w-full py-3 px-3 sm:py-10 sm:px-8 md:px-16 flex justify-between items-center"
     >
       <AnimatePresence>
         {menu && (
@@ -56,7 +57,7 @@ export default function Header() {
               initial="initial"
               animate="open"
               exit="initial"
-              className="absolute top-7 left-5 flex md:hidden justify-center gap-x-5 w-1/4"
+              className="absolute top-7 left-5 flex md:hidden justify-center gap-x-3 sm:gap-x-5 w-1/4"
             >
               {socialLinks.map((link, index) => {
                 return (

@@ -36,8 +36,8 @@ const SpaceCanvas = () => {
       frameloop="demand"
       shadows
       dpr={[1, 2]}
-      //   camera={{ position: [14, 10, 18], fov: 15 }}
-      camera={{ position: [8, 10, 22], fov: 15 }}
+      camera={{ position: [14, 10, 18], fov: 15 }}
+      // camera={{ position: [8, 10, 22], fov: 15 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>

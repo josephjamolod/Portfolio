@@ -7,7 +7,7 @@ export default function TechStack() {
   return (
     <div className="flex flex-col">
       <h1 className="font-medium px-10 text-center">
-        Software tools and technologies I've actively engaged
+        Software tools and technologies I've actively engaged with
       </h1>
       <div className="grid grid-cols-4 justify-center items-center py-10 gap-x-5 md:gap-x-10 gap-y-3 ">
         {techLogos.map((stack, index) => {
