@@ -8,7 +8,7 @@ import { fadeIn } from "../variants/animationTemplate";
 
 export default function About() {
   return (
-    <section className="flex flex-col lg:flex-row  justify-center 2xl:mt-20 lg:px-20 xl:px-40 2xl:px-60">
+    <section className="flex flex-col lg:flex-row  justify-center 2xl:mt-20 lg:px-20 xl:px-40 2xl:px-60 pb-10">
       <div className="flex flex-1  flex-col w-full justify-center items-center  lg:pl-10">
         <motion.div
           variants={fadeIn("right", 0.2)}

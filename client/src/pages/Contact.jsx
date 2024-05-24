@@ -35,7 +35,7 @@ export default function Contact() {
       >
         <button
           onClick={() => setBig(!big)}
-          className=" flex flex-shrink items-center gap-x-1 font-semibold pt-1 text-gray-900"
+          className=" flex flex-shrink items-center pt-1 gap-x-1 text-sm sm:text-base font-semibold  text-gray-900"
         >
           {!big && <FaHandPointRight className=" text-2xl animate-bounce" />}
           Get in touch{" "}

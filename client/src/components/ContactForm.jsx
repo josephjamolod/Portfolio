@@ -10,15 +10,15 @@ export default function ContactForm({ big }) {
   const [loading, setLoading] = useState(false);
 
   const schema = yup.object().shape({
-    name: yup.string().required("Please Provide your name."),
+    name: yup.string().required("Please provide a name."),
     email: yup
       .string()
       .required("Please provide an email")
       .email("Please provide a valid email."),
     message: yup
       .string()
-      .required("Please provide a message")
-      .min(20, "Message atleast 20 characters."),
+      .required("Message is required.")
+      .min(20, "Atleast 20 chars."),
   });
 
   const {
@@ -62,9 +62,11 @@ export default function ContactForm({ big }) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col flex-1 justify-start w-full pt-5 md:pt-10  gap-y-4"
+      className="flex flex-col flex-1 justify-start w-full pt-5 md:pt-3 gap-y-1 md:gap-y-1"
     >
-      <h1 className="text-5xl font-bold text-gray-900">Contact.</h1>
+      <h1 className="text-3xl md:text-5xl font-bold text-slate-900">
+        Contact.
+      </h1>
       <div className="flex items-center justify-between ">
         <label className="font-semibold text-sm">Your Name:</label>
         <p className="text-red-400 text-sm">{errors.name?.message}</p>
@@ -75,7 +77,7 @@ export default function ContactForm({ big }) {
         type="text"
         id="name"
         {...register("name")}
-        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-gray-900 outline-none px-3 py-2 rounded"
+        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 rounded"
       />
       <div className="flex items-center justify-between ">
         <label className="font-semibold text-sm">Your Email:</label>
@@ -86,7 +88,7 @@ export default function ContactForm({ big }) {
         type="email"
         id="email"
         {...register("email")}
-        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-gray-900 outline-none px-3 py-2 rounded"
+        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 rounded"
       />
       <div className="flex items-center justify-between ">
         <label className="font-semibold text-sm">Your Message:</label>
@@ -97,11 +99,11 @@ export default function ContactForm({ big }) {
         type="text"
         id="message"
         {...register("message")}
-        className="h-1/2 placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-gray-900 outline-none px-3 py-4 rounded resize-none"
+        className="h-1/2 placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 rounded resize-none"
       />
       <button
         disabled={loading}
-        className="flex items-center justify-center gap-x-2 font-semibold text-gray-900 bg-neutral-50 hover:bg-neutral-200 w-1/2 self-center py-2 mt-2"
+        className="flex items-center justify-center gap-x-2 font-semibold text-slate-900 bg-neutral-50 hover:bg-neutral-200 w-1/2 self-center py-2 mt-3"
       >
         {loading ? "Sending..." : "Send"}{" "}
         <FiSend className="font-semibold text-xl " />
