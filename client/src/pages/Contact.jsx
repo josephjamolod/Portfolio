@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variants/animationTemplate";
 
 import Space from "../canvas/Space";
-import StarsCanvas from "../canvas/Stars";
 import ContactForm from "../components/ContactForm";
 
 import { FaHandPointRight } from "react-icons/fa";
@@ -22,30 +21,31 @@ export default function Contact() {
       viewport={{ once: false, amount: 0.7 }}
       className=" flex relative w-full h-screen mx-auto "
     >
-      <StarsCanvas />
-      <div
-        className={`flex flex-col justify-between items-center absolute backdrop-blur-md ${
-          big && "px-5 md:px-10"
-        } ${
-          big && "py-5 md:py-10"
-        } top-2  overflow-hidden  left-1/2  -translate-x-1/2 lg:left-80  z-20 border border-slate-400 
+      <div className="absolute flex justify-center   h-full  max-h-[800px] w-full md:w-1/2 overflow-hidden transition-all duration-500 ">
+        <div
+          className={`overflow-hidden flex flex-col justify-between items-center absolute backdrop-blur-md  ${
+            big && "px-5 md:px-10"
+          } ${
+            big && "py-3 md:py-10"
+          } top-2  overflow-hidden   z-20 border border-slate-400 
         transition-all duration-500 ease-in-out transform  rounded ${
-          big ? "w-5/6 sm:w-96 h-4/5 md:h-3/4" : "w-40 h-10"
-        }`}
-      >
-        <button
-          onClick={() => setBig(!big)}
-          className=" flex flex-shrink items-center pt-1 gap-x-1 text-sm sm:text-base font-semibold  text-gray-900"
+          big ? " max-w-[384px] w-5/6 h-5/6  max-h-[600px]" : "w-40 h-10"
+        } `}
         >
-          {!big && <FaHandPointRight className=" text-2xl animate-bounce" />}
-          Get in touch{" "}
-          {!big ? (
-            <MdOutlineKeyboardDoubleArrowDown />
-          ) : (
-            <MdOutlineKeyboardDoubleArrowUp />
-          )}
-        </button>
-        <ContactForm big={big} />
+          <button
+            onClick={() => setBig(!big)}
+            className=" flex flex-shrink items-center pt-1 gap-x-1 text-sm sm:text-base font-semibold  text-gray-900 dark:text-white"
+          >
+            {!big && <FaHandPointRight className=" text-2xl animate-bounce" />}
+            Get in touch{" "}
+            {!big ? (
+              <MdOutlineKeyboardDoubleArrowDown />
+            ) : (
+              <MdOutlineKeyboardDoubleArrowUp />
+            )}
+          </button>
+          <ContactForm big={big} />
+        </div>
       </div>
 
       <div className="w-full ">

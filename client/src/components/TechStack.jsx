@@ -5,7 +5,7 @@ import { fadeIn } from "../variants/animationTemplate";
 
 export default function TechStack() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-gray-900 dark:text-white transition duration-200 ">
       <h1 className="font-medium px-10 text-center">
         Software tools and technologies I've actively engaged with
       </h1>

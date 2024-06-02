@@ -9,8 +9,16 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import RootLayout from "./components/RootLayout";
+import { useState } from "react";
+import StarsCanvas from "./canvas/Stars";
 
 export default function App() {
+  //the "localStorage.setItem("state", JSON.stringify(!origValue));" wont work if we dont have this useState, no idea why
+  const [darkMode, setDarkMode] = useState(false);
+
+  const savedValue = localStorage.getItem("state") || false;
+  const origValue = savedValue.toString() === "true" ? true : false;
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
@@ -21,5 +29,24 @@ export default function App() {
       </Route>
     )
   );
-  return <RouterProvider router={router} />;
+  return (
+    <div className={`${origValue && "dark"}`}>
+      <button
+        onClick={() => {
+          setDarkMode(!darkMode);
+          localStorage.setItem("state", JSON.stringify(!origValue));
+        }}
+        className=" absolute top-0 right-4 dark:text-white underline"
+      >
+        SpaceMode
+      </button>
+
+      <div className=" h-screen  ">
+        <div className="absolute h-screen  w-full -z-10 dark:bg-gray-900">
+          {origValue && <StarsCanvas />}
+        </div>
+        <RouterProvider router={router} />
+      </div>
+    </div>
+  );
 }

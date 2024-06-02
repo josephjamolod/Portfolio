@@ -8,7 +8,7 @@ import { fadeIn } from "../variants/animationTemplate";
 
 export default function About() {
   return (
-    <section className="flex flex-col lg:flex-row  justify-center 2xl:mt-20 lg:px-20 xl:px-40 2xl:px-60 pb-10  dark:bg-gray-800 dark:border-y overflow-hidden py-2">
+    <section className="flex flex-col lg:flex-row  justify-center 2xl:mt-20 lg:px-20 xl:px-40 2xl:px-60 pb-10 dark:bg-transparent ">
       <div className="flex flex-1  flex-col w-full justify-center items-center  lg:pl-10 text-gray-900 dark:text-white transition duration-200 overflow-y-auto">
         <motion.div
           variants={fadeIn("right", 0.2)}
@@ -68,7 +68,7 @@ export default function About() {
         initial="hidden"
         whileInView={"show"}
         id="techStack"
-        className="flex flex-col  items-center flex-1 px-5 lg:px-0 lg:pr-10 justify-center mt-10 lg:mt-0 dark:bg-gray-800 "
+        className="flex flex-col items-center flex-1 px-5 lg:px-0 lg:pr-10 justify-center mt-10 lg:mt-0 "
       >
         <TechStack />
       </motion.div>

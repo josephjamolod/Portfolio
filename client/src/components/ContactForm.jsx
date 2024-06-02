@@ -62,13 +62,15 @@ export default function ContactForm({ big }) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col flex-1 justify-start w-full pt-5 md:pt-3 gap-y-1 md:gap-y-1"
+      className="flex flex-col flex-1 justify-start w-full pt-3 gap-y-1 md:gap-y-1"
     >
-      <h1 className="text-3xl md:text-5xl font-bold text-slate-900">
+      <h1 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white">
         Contact.
       </h1>
       <div className="flex items-center justify-between ">
-        <label className="font-semibold text-sm">Your Name:</label>
+        <label className="font-semibold text-sm dark:text-white">
+          Your Name:
+        </label>
         <p className="text-red-400 text-sm">{errors.name?.message}</p>
       </div>
 
@@ -77,10 +79,12 @@ export default function ContactForm({ big }) {
         type="text"
         id="name"
         {...register("name")}
-        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 rounded"
+        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 "
       />
       <div className="flex items-center justify-between ">
-        <label className="font-semibold text-sm">Your Email:</label>
+        <label className="font-semibold text-sm dark:text-white">
+          Your Email:
+        </label>
         <p className="text-red-400 text-sm">{errors.email?.message}</p>
       </div>
       <input
@@ -88,10 +92,12 @@ export default function ContactForm({ big }) {
         type="email"
         id="email"
         {...register("email")}
-        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 rounded"
+        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 "
       />
       <div className="flex items-center justify-between ">
-        <label className="font-semibold text-sm">Your Message:</label>
+        <label className="font-semibold text-sm dark:text-white">
+          Your Message:
+        </label>
         <p className="text-red-400 text-sm ">{errors.message?.message}</p>
       </div>
       <textarea
@@ -99,7 +105,7 @@ export default function ContactForm({ big }) {
         type="text"
         id="message"
         {...register("message")}
-        className="h-1/2 placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 rounded resize-none"
+        className="h-1/2 placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2  resize-none"
       />
       <button
         disabled={loading}
