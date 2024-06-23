@@ -79,7 +79,7 @@ export default function ContactForm({ big }) {
         type="text"
         id="name"
         {...register("name")}
-        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 "
+        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-300 dark:bg-gray-900 border-slate-400 text-slate-900 dark:text-neutral-300 outline-none px-3 py-1 sm:py-2 "
       />
       <div className="flex items-center justify-between ">
         <label className="font-semibold text-sm dark:text-white">
@@ -92,7 +92,7 @@ export default function ContactForm({ big }) {
         type="email"
         id="email"
         {...register("email")}
-        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2 "
+        className="placeholder:text-sm placeholder:text-slate-400 border bg-neutral-300 dark:bg-gray-900   border-slate-400 text-slate-900 dark:text-neutral-300 outline-none px-3 py-1 sm:py-2 "
       />
       <div className="flex items-center justify-between ">
         <label className="font-semibold text-sm dark:text-white">
@@ -105,11 +105,11 @@ export default function ContactForm({ big }) {
         type="text"
         id="message"
         {...register("message")}
-        className="h-1/2 placeholder:text-sm placeholder:text-slate-400 border bg-neutral-50 border-slate-400 text-slate-900 outline-none px-3 py-1 sm:py-2  resize-none"
+        className="h-1/2 placeholder:text-sm placeholder:text-slate-400 border bg-neutral-300 dark:bg-gray-900  border-slate-400 text-slate-900 dark:text-neutral-300 outline-none px-3 py-1 sm:py-2  resize-none"
       />
       <button
         disabled={loading}
-        className="flex items-center justify-center gap-x-2 font-semibold text-slate-900 bg-neutral-50 hover:bg-neutral-200 w-1/2 self-center py-2 mt-3"
+        className="flex items-center justify-center gap-x-2 font-semibold text-slate-900 bg-neutral-300  hover:bg-neutral-200 w-1/2 self-center py-2 mt-3"
       >
         {loading ? "Sending..." : "Send"}{" "}
         <FiSend className="font-semibold text-xl " />

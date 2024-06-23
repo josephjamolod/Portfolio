@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
+import logo1 from "../assets/logo1.png";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -34,6 +35,9 @@ export default function Header() {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
 
+  const savedValue = localStorage.getItem("state") || false;
+  const origValue = savedValue.toString() === "true" ? true : false;
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -54,7 +58,7 @@ export default function Header() {
       whileInView={"show"}
       viewport={{ once: false, amount: 0.7 }}
       // className="w-full py-10 px-8 md:px-16 flex justify-between items-center"
-      className="w-full py-3 px-3 sm:py-10 sm:px-8 md:px-16 flex justify-between items-center "
+      className="w-full py-3 px-5 sm:py-10 sm:px-8 md:px-16 flex justify-between items-center z-30"
     >
       <AnimatePresence>
         {menu && (
@@ -63,7 +67,7 @@ export default function Header() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className={`fixed md:hidden top-0 h-screen w-full  left-0 origin-top bg-white dark:bg-gray-900 dark:text-white flex justify-center items-center flex-col z-30`}
+            className={`fixed md:hidden top-0 h-screen w-full  left-0 origin-top bg-white dark:bg-gray-900 dark:text-white flex justify-center items-center flex-col `}
           >
             <motion.ul
               variants={menuVars(false, true)}
@@ -128,10 +132,13 @@ export default function Header() {
       </AnimatePresence>
 
       <div className="flex items-center justify-between w-3/4 ">
-        <div className="flex items-center text-gray-900 dark:text-neutral-300">
-          <img className="h-12 " src={logo} alt="" />
+        <Link
+          to={"/"}
+          className="flex items-center text-gray-900 dark:text-neutral-300"
+        >
+          <img className="h-12" src={origValue ? logo1 : logo} alt="" />
           <h1 className="font-semibold ">| Portfolio</h1>
-        </div>
+        </Link>
 
         <ul className="hidden md:flex gap-x-7 text-sm  dark:text-neutral-300  transition duration-800">
           {navLinks.map((link, index) => {

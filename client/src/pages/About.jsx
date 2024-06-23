@@ -8,13 +8,13 @@ import { fadeIn } from "../variants/animationTemplate";
 
 export default function About() {
   return (
-    <section className="flex flex-col lg:flex-row  justify-center 2xl:mt-20 lg:px-20 xl:px-40 2xl:px-60 pb-10  dark:bg-gray-800 dark:border-y overflow-hidden py-2">
+    <section className="px-10 flex flex-col lg:flex-row  justify-center  dark:bg-gray-800 dark:border-y overflow-hidden py-2">
       <div className="flex flex-1  flex-col w-full justify-center items-center  lg:pl-10 text-gray-900 dark:text-white transition duration-200 overflow-y-auto">
         <motion.div
           variants={fadeIn("right", 0.2)}
           initial="hidden"
           whileInView={"show"}
-          className="flex flex-col w-5/6 justify-center lg:justify-start text-start pt-5 "
+          className="flex flex-col w-5/6 justify-center lg:justify-start text-start py-5 "
         >
           <h1 className="font-bold text-4xl sm:text-6xl ">About Me</h1>
           <p className="m-5 font-semibold  text-sm sm:pt-5 self-center  leading-loose">
@@ -62,13 +62,13 @@ export default function About() {
           </div>
         </motion.div>
       </div>
-
+      {/* <div className="flex-1">red</div> */}
       <motion.div
         variants={fadeIn("right", 0.2)}
         initial="hidden"
         whileInView={"show"}
         id="techStack"
-        className="flex flex-col  items-center flex-1 px-5 lg:px-0 lg:pr-10 justify-center mt-10 lg:mt-0 dark:bg-gray-800 "
+        className="flex flex-col  items-center flex-1 px-5 lg:px-0  justify-center mt-10 lg:mt-0 dark:bg-gray-800 "
       >
         <TechStack />
       </motion.div>

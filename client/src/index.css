@@ -11,3 +11,20 @@
 /* * {
   @apply transition-colors duration-300;
 } */
+
+/* Add this to your CSS file or in a <style> tag */
+.button-style {
+  background-color: #111827 !important; /* Change to your desired color */
+  color: #fff !important; /* Change the text color if needed */
+  border: none !important; /* Optional: remove border */
+  border-radius: 5px !important; /* Optional: add border radius */
+}
+
+.icon-style {
+  color: #111827 !important;
+  border-color: #111827 !important;
+}
+
+.title-style {
+  font-size: 20px;
+}

@@ -21,13 +21,16 @@ export default function Contact() {
       viewport={{ once: false, amount: 0.7 }}
       className=" flex relative w-full h-screen mx-auto "
     >
-      <div className="absolute flex justify-center   h-full  max-h-[800px] w-full md:w-1/2 overflow-hidden transition-all duration-500 ">
+      <div
+        className="absolute flex justify-center   h-full  max-h-[800px] w-full md:w-1/2 
+      overflow-hidden transition-all duration-500 "
+      >
         <div
           className={`overflow-hidden flex flex-col justify-between items-center absolute backdrop-blur-md  ${
             big && "px-5 md:px-10"
           } ${
             big && "py-3 md:py-10"
-          } top-2  overflow-hidden   z-20 border border-slate-400 
+          } top-2  overflow-hidden   z-10 border border-slate-400 
         transition-all duration-500 ease-in-out transform  rounded ${
           big ? " max-w-[384px] w-5/6 h-5/6  max-h-[600px]" : "w-40 h-10"
         } `}
@@ -49,8 +52,8 @@ export default function Contact() {
       </div>
 
       <div className="w-full ">
-        <div className="absolute bottom-0 bg-black h-2/5 w-full" />
-        <div className="absolute bottom-0 sm:h-5/6 h-40 black-gradient w-full" />
+        <div className="absolute bottom-0 bg-black h-2/5 w-screen" />
+        <div className="absolute bottom-0 sm:h-5/6 h-40 black-gradient w-screen" />
         <Space />
       </div>
     </motion.div>
